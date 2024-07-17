@@ -1,0 +1,33 @@
+---
+- name: Ensure basic tools are installed on Rocky Linux
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update all packages to the latest version
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install basic tools
+      yum:
+        name:
+          - git
+          - vim
+          - wget
+          - curl
+          - nano
+        state: present
+
+    - name: Ensure EPEL repository is enabled
+      yum:
+        name: epel-release
+        state: present
+
+    - name: Install additional useful tools from EPEL
+      yum:
+        name:
+          - htop
+          - net-tools
+          - tree
+        state: present
