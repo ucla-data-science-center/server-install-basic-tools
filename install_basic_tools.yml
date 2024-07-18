@@ -17,6 +17,7 @@
           - wget
           - curl
           - nano
+          - ansible
         state: present
 
     - name: Ensure EPEL repository is enabled
