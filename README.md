@@ -11,5 +11,5 @@ git clone https://github.com/ucla-data-science-center/server-install-basic-tools
 Run by: 
 
 ```
-ansible-playbook -i inventory uninstall_dataverse.yml
+ansible-playbook -i inventory server-install-basic-tools.yml
 ```
