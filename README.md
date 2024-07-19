@@ -11,5 +11,5 @@ git clone https://github.com/ucla-data-science-center/server-install-basic-tools
 Run by: 
 
 ```
-ansible-playbook -i inventory server_install_basic_tools.yml
+ansible-playbook -i inventory install_basic_tools.yml
 ```
