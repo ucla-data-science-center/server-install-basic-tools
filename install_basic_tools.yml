@@ -4,13 +4,18 @@
   become: yes
 
   tasks:
+    - name: Ensure EPEL repository is enabled
+      dnf:
+        name: epel-release
+        state: present
+
     - name: Update all packages to the latest version
-      yum:
+      dnf:
         name: '*'
         state: latest
 
     - name: Install basic tools
-      yum:
+      dnf:
         name:
           - git
           - vim
@@ -20,13 +25,8 @@
           - ansible
         state: present
 
-    - name: Ensure EPEL repository is enabled
-      yum:
-        name: epel-release
-        state: present
-
     - name: Install additional useful tools from EPEL
-      yum:
+      dnf:
         name:
           - htop
           - net-tools
